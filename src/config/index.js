@@ -1,0 +1,1 @@
+export const JUEJIN = "http://localhost:3434"

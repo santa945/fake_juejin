@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { List, NavBar } from 'antd-mobile'
-
+import api from './../../apis'
 //引入样式
 import './mine.scss'
 import store from '../../store';
@@ -26,6 +26,10 @@ class Mine extends Component {
         store.dispatch({ type: 'UPDATE_TAB', payload: 'mine' })
         //判定是否已经登录
         let userPhone = getCookie('juejinUser');
+        console.log(api);
+        api.getUserInfo({id:12333}).then(res=>{
+            console.log(res);
+        })
         if (userPhone) {
             //有cookie代表登录了
             this.setState({
