@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-
+import {withRouter} from 'react-router-dom'
 import { List, NavBar } from 'antd-mobile'
-import api from './../../apis'
 //引入样式
 import './mine.scss'
 import store from '../../store';
@@ -19,6 +18,7 @@ class Mine extends Component {
             userPhone: '登录',
             userIcon: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1798168535,2067053286&fm=15&gp=0.jpg'
         }
+        this.gotoLogin = this.gotoLogin.bind(this)
     }
 
     //在此生命周期判断是否登录
@@ -26,20 +26,22 @@ class Mine extends Component {
         store.dispatch({ type: 'UPDATE_TAB', payload: 'mine' })
         //判定是否已经登录
         let userPhone = getCookie('juejinUser');
-        console.log(api);
-        api.getUserInfo({id:12333}).then(res=>{
-            console.log(res);
-        })
         if (userPhone) {
             //有cookie代表登录了
             this.setState({
                 userPhone
             })
-        }else{
-            //无cookie则展示普通
         }
     }
 
+    //跳转到登录页面
+    gotoLogin(){
+        if(this.state.userPhone==='登录'){
+            this.props.history.push('/login')
+        }else{
+            this.props.history.push('/own')
+        }
+    }
     render() {
         const userIcon = this.state.userIcon
         return (
@@ -47,9 +49,9 @@ class Mine extends Component {
                 <NavBar mode="light">我</NavBar>
                 <div className="header">
                     <List style={{ margin: '16px 0' }}>
-                        <Item arrow="horizontal" style={{ height: '80px' }}>
+                        <Item arrow="horizontal" style={{ height: '80px' }} onClick={this.gotoLogin}>
                             <img src={userIcon} alt="avatar" />
-                            <span style={{ verticalAlign: 'middle' }}>登录 / 注册</span>
+                            <span style={{ verticalAlign: 'middle' }}>{this.state.userPhone==='登录'?"登录 / 注册" :this.state.userPhone}</span>
                         </Item>
                     </List>
                 </div>
@@ -118,4 +120,4 @@ class Mine extends Component {
     }
 }
 
-export default Mine
+export default withRouter(Mine)

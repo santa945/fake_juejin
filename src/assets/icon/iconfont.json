@@ -6,25 +6,39 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "2480667",
+      "icon_id": "611859",
       "name": "首页",
       "font_class": "shouye",
-      "unicode": "e630",
-      "unicode_decimal": 58928
+      "unicode": "e604",
+      "unicode_decimal": 58884
     },
     {
-      "icon_id": "4228624",
-      "name": "放大镜",
-      "font_class": "fangdajing",
-      "unicode": "e614",
-      "unicode_decimal": 58900
+      "icon_id": "975178",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e605",
+      "unicode_decimal": 58885
     },
     {
-      "icon_id": "5720783",
+      "icon_id": "2270373",
+      "name": "我",
+      "font_class": "wo2",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "2815692",
       "name": "推荐",
       "font_class": "jian",
-      "unicode": "e520",
-      "unicode_decimal": 58656
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "4302753",
+      "name": "放大镜",
+      "font_class": "fangdajing",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
     },
     {
       "icon_id": "7069864",
@@ -41,11 +55,11 @@
       "unicode_decimal": 58881
     },
     {
-      "icon_id": "13145312",
-      "name": "我 的",
-      "font_class": "home",
-      "unicode": "e607",
-      "unicode_decimal": 58887
+      "icon_id": "13308697",
+      "name": "掘金",
+      "font_class": "juejin",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
     },
     {
       "icon_id": "15170955",

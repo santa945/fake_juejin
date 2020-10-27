@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const Axios = axios.create({
-    timeout: 300000
+    baseURL: 'http://localhost:3434',
+    timeout: 300000 //30s网络超时
 })
 
 //请求拦截器

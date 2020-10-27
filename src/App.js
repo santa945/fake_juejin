@@ -14,6 +14,8 @@ import Hot from "./pages/Hot"
 import Find from "./pages/Find"
 import Booklet from "./pages/Booklet"
 import Mine from "./pages/Mine"
+import Login from "./pages/Login"
+import Own from "./pages/Own"
 
 
 
@@ -57,6 +59,8 @@ class App extends Component {
             <Route path="/find" component={Find} />
             <Route path="/booklet" component={Booklet} />
             <Route path="/mine" component={Mine} />
+            <Route path="/login" component={Login} />
+            <Route path="/own" component={Own} />
             <Redirect from='/' to="/home" />
           </Switch>
         </main>
@@ -87,7 +91,7 @@ class App extends Component {
                 </span>
                 </li>
               <li onClick={this.goto.bind(this,'mine')} className={this.props.home.currentTab === 'mine'?"selected":null}>
-                <i className="iconfont icon-home" style={{fontSize: '22px'}}></i>
+                <i className="iconfont icon-wo2" style={{fontSize: '22px'}}></i>
                 <span>
                 我
                 </span>

@@ -1,1 +1,1 @@
-export const JUEJIN = "http://localhost:3434"
+export const JUEJIN = ""
