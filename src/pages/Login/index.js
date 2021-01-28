@@ -16,7 +16,7 @@ class Login extends Component {
         this.backClick = this.backClick.bind(this)
         this.canLogin = this.canLogin.bind(this)
     }
-    async componentDidMount() {
+    async componentDidMount () {
         if (this.props.location.query) {
             await this.setState({
                 phoneValue: this.props.location.query.phone
@@ -24,13 +24,13 @@ class Login extends Component {
         }
     }
     //在卸载的时候对state的操作进行清除
-    componentWillUnmount() {
+    componentWillUnmount () {
         this.setState = (state, cb) => {
             return
         }
     }
     // 返回上次点击页面
-    backClick() {
+    backClick () {
         this.props.history.go(-1)
     }
 
@@ -72,19 +72,19 @@ class Login extends Component {
     }
 
     //登录验证
-    canLogin() {}
+    canLogin () { }
 
 
-    render() {
+    render () {
         return (
-            <div className="login" style={{background: 'white',height: '100%'}}>
+            <div className="login" style={{ background: 'white', height: '100%' }}>
                 <NavBar
-                mode="light"
-                icon={<Icon type="left" />}
-                onLeftClick={this.backClick}
+                    mode="light"
+                    icon={<Icon type="left" />}
+                    onLeftClick={this.backClick}
                 ></NavBar>
-                <div className="logo" style={{textAlign:'center',margin:'40px 0'}}>
-                    <i className="iconfont icon-juejin" style={{fontSize:'45px',color:'#3280f6'}}></i>
+                <div className="logo" style={{ textAlign: 'center', margin: '40px 0' }}>
+                    <i className="iconfont icon-juejin" style={{ fontSize: '45px', color: '#3280f6' }}></i>
                 </div>
                 <main className="login_main">
                     <InputItem

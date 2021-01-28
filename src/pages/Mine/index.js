@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { List, NavBar } from 'antd-mobile'
 //引入样式
-import './mine.scss'
-import store from '../../store';
+import './mine.css'
 import { getCookie } from '../../script/utils';
 
 
@@ -22,8 +21,7 @@ class Mine extends Component {
     }
 
     //在此生命周期判断是否登录
-    componentDidMount() {
-        store.dispatch({ type: 'UPDATE_TAB', payload: 'mine' })
+    componentDidMount () {
         //判定是否已经登录
         let userPhone = getCookie('juejinUser');
         if (userPhone) {
@@ -35,14 +33,14 @@ class Mine extends Component {
     }
 
     //跳转到登录页面
-    gotoLogin(){
-        if(this.state.userPhone==='登录'){
+    gotoLogin () {
+        if (this.state.userPhone === '登录') {
             this.props.history.push('/login')
-        }else{
+        } else {
             this.props.history.push('/own')
         }
     }
-    render() {
+    render () {
         const userIcon = this.state.userIcon
         return (
             <div className="mine">
@@ -51,7 +49,7 @@ class Mine extends Component {
                     <List style={{ margin: '16px 0' }}>
                         <Item arrow="horizontal" style={{ height: '80px' }} onClick={this.gotoLogin}>
                             <img src={userIcon} alt="avatar" />
-                            <span style={{ verticalAlign: 'middle' }}>{this.state.userPhone==='登录'?"登录 / 注册" :this.state.userPhone}</span>
+                            <span style={{ verticalAlign: 'middle' }}>{this.state.userPhone === '登录' ? "登录 / 注册" : this.state.userPhone}</span>
                         </Item>
                     </List>
                 </div>
