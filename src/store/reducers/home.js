@@ -1,4 +1,4 @@
-import { UPDATE_TAB } from '../../actions/common'
+import { UPDATE_TAB, SET_GOODS_LIST } from '../../actions/common'
 
 const defaultState = {
     currentCity: "广州",
@@ -11,6 +11,8 @@ const cityReducers = (state = defaultState, action) => {
             return { ...state, currentCity: action.payload }
         case UPDATE_TAB:
             return { ...state, currentTab: action.payload }
+        case SET_GOODS_LIST:
+            return { ...state, goodlist: action.payload }
         default:
             return state
     }

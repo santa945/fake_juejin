@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const Axios = axios.create({
-    baseURL: 'http://127.0.0.1:3000/mock/11',
+    baseURL: 'http://localhost:3434',
     timeout: 300000 //30s网络超时
 })
 
@@ -20,8 +20,7 @@ Axios.interceptors.request.use(function (config) {
 function repResolve (rep = {}) {
     return new Promise((resolve, reject) => {
         const { data } = rep;
-        console.log(data);
-        if (data.errcode === 0) {
+        if (data.status === 200) {
             resolve(data.data)
         } else {
             reject()

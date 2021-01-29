@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import homeApi from "./../../apis/home"
+// import homeApi from "./../../apis/home"
 
-console.log('homeApi', homeApi);
+import { connect } from 'react-redux'
 class Home extends Component {
     constructor() {
         super()
@@ -10,10 +10,16 @@ class Home extends Component {
         }
     }
     componentDidMount () {
-        console.log(222);
-        homeApi.getHot().then(res => {
-            console.log(res);
+        const { dispatch } = this.props
+        dispatch({
+            type: 'SAGA_GOODS_LIST',
+            payload: {
+                id: 112233
+            }
         })
+        // homeApi.getList().then(res => {
+        //     console.log(res);
+        // })
     }
     render () {
         return (
@@ -23,5 +29,5 @@ class Home extends Component {
         )
     }
 }
-
+Home = connect(state => state)(Home)
 export default Home
