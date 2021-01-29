@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { bindActionCreators, combineReducers } from 'redux'
+import commonActionCreators from './actions/common'
 import { connect } from 'react-redux'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import store from './store'
@@ -25,21 +27,16 @@ class App extends Component {
     }
 
     goto (name) {
-        store.dispatch({
-            type: "UPDATE_TAB",
-            payload: name
-        })
-        let { history } = this.props
+        const { history, updateTab } = this.props
+        updateTab(name)
         history.push('/' + name)
     }
 
     //刷新时，currentTab随着当前路由保持一致
     componentDidMount () {
         const currentTab = this.props.location.pathname.slice(1)
-        store.dispatch({
-            type: "UPDATE_TAB",
-            payload: currentTab
-        })
+        const { updateTab } = this.props
+        updateTab(currentTab)
     }
 
 
@@ -103,4 +100,8 @@ class App extends Component {
 }
 App = withRouter(App)
 
-export default connect(state => state)(App)
+export default connect(
+    state => state,
+    dispatch => bindActionCreators(commonActionCreators, dispatch)
+
+)(App)
