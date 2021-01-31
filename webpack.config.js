@@ -58,6 +58,10 @@ module.exports = {
                         name: 'img/[name].[hash:8].[ext]'
                     }
                 }
+            },
+            {
+                test: /\.(ttf|eot|woff|woff2|svg)$/,//iconfont字体图标使用file-loader加载器
+                loader: ['file-loader']
             }
         ]
     },

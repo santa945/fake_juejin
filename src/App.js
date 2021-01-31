@@ -3,8 +3,8 @@ import { bindActionCreators, combineReducers } from 'redux'
 import commonActionCreators from './actions/common'
 import { connect } from 'react-redux'
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
-import store from './store'
 
+import './assets/icon/iconfont.css'
 import './App.scss'
 import './css/reset.css'
 
