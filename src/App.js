@@ -7,6 +7,7 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom'
 import './assets/icon/iconfont.css'
 import './App.scss'
 import './css/reset.css'
+import './css/common.css'
 
 //页面路由
 import Home from "./pages/Home"

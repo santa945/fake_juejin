@@ -36,7 +36,8 @@ module.exports = {
                         plugins: [
                             '@babel/proposal-class-properties',
                             "@babel/plugin-transform-runtime",
-                            ["import", { libraryName: "antd-mobile", style: "css" }] // `style: true` 会加载 less 文件
+                            ["import", { libraryName: "antd", style: "css" }, "antd"],// 必须加第三个参数“antd”相当于id，才不会和下面的antg-mobile冲突
+                            ["import", { libraryName: "antd-mobile", style: "css" }],// `style: true` 会加载 less 文件
                         ]
                     }
                 }]
